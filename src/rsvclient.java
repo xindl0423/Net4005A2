@@ -3,9 +3,7 @@ import java.rmi.*;
 public class rsvclient {
     public static void main(String[] args) {
         if (args.length < 2) {
-            System.out.println("Usage: java rsvclient list <server_name>");
-            System.out.println("Usage: java reserve <server_name> <class> <passenger_name> <seat_number>");
-            System.out.println("Usage: java passengerlist <servername>");
+            System.out.println("Usage cases: \njava rsvclient list <server_name>\n , \njava reserve <server_name> <class> <passenger_name> <seat_number>\n, \njava passengerlist <servername>\n");
             return;
         }
 
