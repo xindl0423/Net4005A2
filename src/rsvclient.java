@@ -7,19 +7,10 @@ public class rsvclient {
             return;
         }
 
-        String serverIP = args[0];
-        int serverPort = Integer.parseInt(args[1]);
-        String filename = args[2];
-
-        Socket socket = null;
-        DataInputStream in = null;
-        DataOutputStream out = null;
-        FileOutputStream fileOutputStream = null;
-
         try {
-            switch();
+            switch(args[0].toLowerCase()){
                 case "list":
-                 String availableSeats = reservationService.listavailableseats();
+                 String availableSeats = ReservationInterface.listAvailability();
                     System.out.println(availableSeats);
                     break;
                 case "reserve":
@@ -30,14 +21,15 @@ public class rsvclient {
                     int seatnum = Integer.parseInt(args[2]);
                     String passengername = args[3];
                     String seatclass = args[4];
-                    String result = reservationService.reserveSeat(seatnum, passengername, seatclass);
+                    String result = rsvserver.reserveseat(seatnum, passengername, seatclass);
                     System.out.println(result);
                     break;
                 case "passengerlist":
-                    System.out.println(server.passengerList());
+                    System.out.println(rsvserver.passengerList());
                     break;
                 default:
                      System.out.println("Unkown command");
+                     }
             } catch (Exception e) {
                 e.printStackTrace();
         }
