@@ -12,19 +12,28 @@ To run the server file use:
             -java rsvserver and this will run the server section of the file
             -sample format:
                         -'java myfileserver.java'
-            -The sever will run with the default port of 2020.
-            -The server looks for the files to be transferred from "\.idea\ServerFiles" location
+            -The sever will run and output a message "Reservation server is running..."
 To run the client file use:
-            -java rsvclient and this will run the client section of the file
+            -java rsvclient can do 3 various tasks:
+                -listing available seats
+                -reserving seats
+                -listing passengers
             -required:
-                        -ip address of server
-                        -port
-                        -file to be downloaded
-            -sample format
-                        -'java myfileclient.java ip address 2020 hello.txt'
-            -this will download "hello.txt" from the file server on port 2020 and download it to the local directory
-
-	
+                -task 1(listing all available seats):
+                        -ip address of server/localhost
+                        -'java rsvclient list localhost'
+                        -this display the current available seats in both economy and business class
+                -task 1(reservation of seats):
+                        -ip address of server/localhost
+                        -seat class
+                        -passenger name
+                        -seat number
+                        -'java rsvclient reserve localhost business Darien 1'
+                        -this display the current available seats in both economy and business class
+                -task 1(listing all passengers):
+                         -ip address of server/localhost
+                         -'java rsvclient passengerlist localhost'
+                         -this display the current available seats in both economy and business class
 
 ## Contributors
 Darien Ramiez-Hennessey
