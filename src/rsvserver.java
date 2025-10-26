@@ -19,7 +19,6 @@ public class rsvserver extends UnicastRemoteObject implements reservationInterfa
         for (int i = 6; i <= totalseats; i++) economySeats.add(i);
     }
 
-    // ----------------------------------------------------------------
 
     @Override
     public synchronized String listAvailability() throws RemoteException {
@@ -53,7 +52,6 @@ public class rsvserver extends UnicastRemoteObject implements reservationInterfa
         return sb.toString();
     }
 
-    // ----------------------------------------------------------------
 
     @Override
     public synchronized String reserveSeat(String seatClass) throws RemoteException {
@@ -110,8 +108,6 @@ public class rsvserver extends UnicastRemoteObject implements reservationInterfa
             else return 450;
         }
     }
-
-    // ----------------------------------------------------------------
 
     public static void main(String[] args) {
         try {
